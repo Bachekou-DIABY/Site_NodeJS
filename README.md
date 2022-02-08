@@ -1,6 +1,6 @@
 <img src="./data/header.jpg">
 
-**DELAHAYE** Tom *(p2110727)* et **CISSE** Ahmed *(p1811047)* **DIABY** BACHEKOU *(p2108161)* **MARTINEZ** CHRISTOPHE *p1709105* 
+**DELAHAYE** Tom *(p2110727)* et **CISSE** Ahmed *(p1811047)* **DIABY** BACHEKOU *(p2108161)* **MARTINEZ** CHRISTOPHE *(p1709105)* 
 
 ## Sommaire <!-- omit in toc -->
 - [A. Objectif](#a-objectif)
@@ -12,7 +12,7 @@
 - [E. Modalités de rendu et deadline](#e-modalités-de-rendu-et-deadline)
 
 ## A. Objectif
-[**Implémentation du projet RC1 (Data Explorable) en jsp dans le cadre de l'UE LIFPROJET.**](http://cazabetremy.fr/wiki/doku.php?id=projet:sujets"**ici**")
+[**Implémentation du projet RC1 (Data Explorable) en jsp dans le cadre de l'UE LIFPROJET.**](http://cazabetremy.fr/wiki/doku.php?id=projet:sujets "**ici**")
 
 Le principe de ce projet est de Choisir une source de données accessible (open data, data crawling, etc), de collecter ces données, les analyser, et construire un “explorable” permettant à n'importe qui d'explorer ces données de manière interactive, typiquement sous la forme d'un site web.
 
