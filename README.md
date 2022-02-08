@@ -71,7 +71,7 @@ exemple de l'affichage :
 
 ## E. Modalités de rendu et deadline
 
-Vous déposerez une archive `Nom1_Nom2_Nom3_Nom4.tgz` *(les Noms étant les noms des 4 étudiants composant le groupe)* de votre travail sur Tomuss . Les membres de l'équipe **Alt-TAB** jsp quoi
+Vous déposerez une archive `Nom1_Nom2_Nom3_Nom4.tgz` *(les Noms étant les noms des 4 étudiants composant le groupe)* de votre travail sur TOMUSS . Les membres de l'équipe **Alt-TAB** jsp quoi
 
 **La date limite de rendu est fixée au JSP JJ/DD/YYYY à XXhXX.** Le rendu sera suivi d'une bonne note.
 
