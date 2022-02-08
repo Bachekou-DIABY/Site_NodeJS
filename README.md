@@ -14,6 +14,14 @@
 ## A. Objectif
 [**Implémentation du projet RC1 (Data Explorable) en jsp dans le cadre de l'UE LIFPROJET.**](http://cazabetremy.fr/wiki/doku.php?id=projet:sujets"**ici**")
 
+Le principe de ce projet est de Choisir une source de données accessible (open data, data crawling, etc), de collecter ces données, les analyser, et construire un “explorable” permettant à n'importe qui d'explorer ces données de manière interactive, typiquement sous la forme d'un site web.
+
+Vous êtes libre de choisir les données qui vous intéresse, et nous discuterons des analyses que nous pouvons en faire (restitution sous forme de cartes, de réseaux/graphes, de graphiques interactifs, sous forme de site-web ou non, etc.).
+
+Notez que si vous souhaitez vous orienter vers une Visualization originale, interactive, construite sur mesure, vous pouvez choisir à la place le sujet GR3. Ce sujet-ci est plus orienté données, et utilisera plutôt des outils de visualisation classique (leaflet pour des cartes, chartjs pour des graphiques, etc.). Par contre, dans ce sujet nous pouvons passer plus de temps à travailler sur les données elles-même, ou travailler sur des Big Data, etc.
+
+Quelques exemples classiques de données: Données météorologiques, Données de santé (Covid…), Données sportives (résultats sportifs par saison ou par match…), Culturelles (données de films, de musique…), Restaurants/Musées… Mais aussi: (politique, réseaux sociaux, économie, environnement, sécurité, etc.) 
+
 ## B. Arborescence
 Le code que nous avons  suit l'arborescence suivante :
 ```
@@ -63,9 +71,9 @@ exemple de l'affichage :
 
 ## E. Modalités de rendu et deadline
 
-Vous déposerez une archive `Nom1_Nom2.tgz` *(Nom1 et Nom2 étant les noms des 2 étudiants composant le groupe)* de votre travail sur Tomuss . Les membres de l'équipe **Alt-TAB** jsp quoi
+Vous déposerez une archive `Nom1_Nom2_Nom3_Nom4.tgz` *(les Noms étant les noms des 4 étudiants composant le groupe)* de votre travail sur Tomuss . Les membres de l'équipe **Alt-TAB** jsp quoi
 
-**La date limite de rendu est fixée au JSP JJ/DD/YYYY à XXhXX.** Le rendu sera suivi de jsp.
+**La date limite de rendu est fixée au JSP JJ/DD/YYYY à XXhXX.** Le rendu sera suivi d'une bonne note.
 
 Votre archive doit contenir un répertoire Nom1_Nom2 avec les sources de votre application. Les
 sources sont bien évidemment tous les fichiers .cpp et .hpp, mais aussi le fichier Makefile, ainsi
