@@ -1,4 +1,4 @@
-<img src="./data/header.png">
+<img src="./data/header.jpg">
 
 **DELAHAYE** Tom *(p2110727)* et **CISSE** Ahmed *(p1811047)* **DIABY** BACHEKOU *(p2108161)* **MARTINEZ** CHRISTOPHE *p1709105* 
 
