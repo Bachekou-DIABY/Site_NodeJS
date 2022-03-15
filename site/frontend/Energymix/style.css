@@ -1,0 +1,28 @@
+html{
+    background-color: red;
+    overflow-x: hidden;
+}
+header{
+    background-color:;
+}
+
+.container-data{
+    position: relative;
+    background-color: #10181d;
+    height: 100vh;
+    width: 100vw;
+    padding: 1vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+footer{
+    background-color: #15252c;
+    color: #eeee;
+    position: relative;
+    bottom: 0;
+    margin: 0;
+    width: 100vw;
+    padding: 1%
+}
