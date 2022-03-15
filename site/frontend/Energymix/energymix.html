@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
+    <!-- <script src="script.js"></script> -->
 </head>
 
 <body class="container-fluid p-0 m-0">
@@ -37,27 +37,73 @@
             </li>
         </ul>
     </header>
-
+    
     <div class="container-data">
-       <div class="container-production">
-           <div class="prod1">
-                <img class="prod1-img" src="../../../../../Images/nuclear-power-plant.png"/>
-                <span class="prod1-nom">Nucléaire</span>
-                <div class="prod1-prod">
-                    <span>40565</span>
-                    <span>Mw</span>
+        <!--TITRE-->
+        <h1>Production d'électricité francaise en temps réel</h1>
+        <!--PRODUCTION-->
+        <div id="container-production">
+           <div class="prod">
+                <img src="./energyLogo.png">
+                <div class="prod-text">
+                    <span class="prod-nom">Nucléaire</span>
+                    <div class="prod-prod">
+                        <span>35235</span>
+                        <span>Mw</span>
+                    </div>
                 </div>
            </div>
-       </div> 
-       <div class="container-pourcentage">
-           <ul>
-
-           </ul>
-       </div>
+           <div class="prod">
+                <img src="./energyLogo.png">
+                <div class="prod-text">
+                    <span class="prod-nom">Charbon</span>
+                    <div class="prod-prod">
+                        <span>1659</span>
+                        <span>Mw</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="./energyLogo.png">
+                <div class="prod-text">
+                    <span class="prod-nom">Gaz</span>
+                    <div class="prod-prod">
+                        <span>128</span>
+                        <span>Mw</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--POURCENTAGE-->
+        <div id="container-pourcentage">
+            <div class="pourcen">
+                <span class="pourcen-nom">Nucléaire</span>
+                <div class="pourcen-pourcen">
+                    <span>60</span>
+                    <span>%</span>
+                </div>
+           </div>
+           <div class="pourcen">
+            <span class="pourcen-nom">Charbon</span>
+            <div class="pourcen-pourcen">
+                <span>30</span>
+                <span>%</span>
+            </div>
+            </div>  
+            <div class="pourcen">
+                <span class="pourcen-nom">Gaz</span>
+                <div class="pourcen-pourcen">
+                    <span>10</span>
+                    <span>%</span>
+                </div>
+           </div> 
+        </div>
+    </div>
+    
     </div>
     
     <footer>
-        <p>Hello</p>
+        <p>footer</p>
     </footer>
 </body>
 

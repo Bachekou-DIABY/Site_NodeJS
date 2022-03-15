@@ -19,7 +19,7 @@ soup = BeautifulSoup(xml.content, "lxml")
 
 date = soup.find('date_actuelle').text
 # gaz_tag = soup.find('type', v= "Gaz")
-header = [['Filières', date]]
+header = [['Filieres', 'Production']]
 df = pd.DataFrame(columns=header)
 
 
@@ -54,6 +54,7 @@ df = pd.read_csv(CSV_FILENAME)
 df["Pourcentage"] = round((df[date]/sommeProd)*100, 1)
 df.to_csv(CSV_FILENAME, index=False)
 
+print(date)
 print(df)
 
 
