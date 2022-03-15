@@ -18,14 +18,18 @@ function checkCSV(file) {
 
 // Convertit le texte d'un csv en un object js
 function toObject(string) {
-    const rows = string.split("\n");
-    const array = rows.map(row => row.split(","));
-    let object = {};
+    const rows = string.split("\n");    // Séparation des lignes
+    rows.pop();  // On enleve le dernier élément qui est vide
+    const array = rows.map(row => row.split(","));  // Séparation des colones
 
-    for (i=1; i<array.length; i++) {
-        object[i-1] = {};
-        for (j=0; j<array[0].length; j++) {
-            object[i-1][array[0][j]] = array[i][j];
+    // Création d'un object qui contiendra les données
+    // Pour chaque ligne des pairs [clé, attribut]
+    // Avec clé le nom de la colone et attribut la valeur
+    let object = {};
+    for (i = 1; i < array.length; i++) {
+        object[i - 1] = {};
+        for (j = 0; j < array[0].length; j++) {
+            object[i - 1][array[0][j]] = array[i][j];
         }
     }
 
@@ -33,17 +37,18 @@ function toObject(string) {
 }
 
 // Prend un object js contenant des champs "latitude" et "longitude"
-function createMarkers (data) {
-    console.log(data[0]);
+function createMarkers(data) {
+    let markers = L.markerClusterGroup();
     for (i in data) {
-        L.marker([data[i]["latitude"], data[i]["longitude"]]).addTo(map);
+        markers.addLayer(L.marker([parseFloat(data[i]["latitude"]), parseFloat(data[i]["longitude"])]));
     }
+    map.addLayer(markers);
 }
 
 document.getElementById('csvfile').addEventListener('change', function() {
     const file = event.target.files;
 
-    if(!checkCSV(file)) return;
+    if (!checkCSV(file)) return;
 
     var fr = new FileReader();
     fr.onloadend = function() {
