@@ -18,9 +18,9 @@ function checkCSV(file) {
 
 // Convertit le texte d'un csv en un object js
 function toObject(string) {
-    const rows = string.split("\n");    // Séparation des lignes
-    rows.pop();  // On enleve le dernier élément qui est vide
-    const array = rows.map(row => row.split(","));  // Séparation des colones
+    const rows = string.split("\n"); // Séparation des lignes
+    rows.pop(); // On enleve le dernier élément qui est vide
+    const array = rows.map(row => row.split(",")); // Séparation des colones
 
     // Création d'un object qui contiendra les données
     // Pour chaque ligne des pairs [clé, attribut]
@@ -36,11 +36,45 @@ function toObject(string) {
     return object;
 }
 
+function createPopupText(data) {
+    let keys = [
+        "name",
+        "country",
+        "latitude",
+        "longitude",
+        "primary_fuel",
+        "capacity_mw"
+    ];
+    let res = "";
+
+    keys.forEach(key => {
+        res += key + " : ";
+        res += data[key];
+        res += "<br>";
+    });
+
+    return res;
+}
+
+function markerOnClick (data) {
+    let text = "";
+    for (key in data) {
+        text += key + " : ";
+        text += data[key];
+        text += "<br>";
+    }
+    const cardContent = document.getElementById("card-content");
+    cardContent.innerHTML = text;
+}
+
 // Prend un object js contenant des champs "latitude" et "longitude"
 function createMarkers(data) {
     let markers = L.markerClusterGroup();
     for (i in data) {
-        markers.addLayer(L.marker([parseFloat(data[i]["latitude"]), parseFloat(data[i]["longitude"])]));
+        const marker = L.marker([parseFloat(data[i]["latitude"]), parseFloat(data[i]["longitude"])]);
+        marker.bindPopup(createPopupText(data[i]));
+        marker.on('click', () => markerOnClick(data[i]));
+        markers.addLayer(marker);
     }
     map.addLayer(markers);
 }
