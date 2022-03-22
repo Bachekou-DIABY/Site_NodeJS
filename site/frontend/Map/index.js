@@ -1,4 +1,4 @@
-var map = L.map('map').setView([45.784, 4.875], 2);
+var map = L.map('map').setView([45.784, 4.875], 1.5);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -36,6 +36,8 @@ function toObject(string) {
     return object;
 }
 
+// Génère le texte à afficher dans les popups associées aux marqueurs
+// Entrée : les données d'un marqueur
 function createPopupText(data) {
     let keys = [
         "name",
@@ -56,6 +58,8 @@ function createPopupText(data) {
     return res;
 }
 
+// Gestion de l'évennement onClick des marqueurs
+// Entrée : les données associées au marqueur
 function markerOnClick (data) {
     let text = "";
     for (key in data) {
@@ -71,9 +75,10 @@ function markerOnClick (data) {
 function createMarkers(data) {
     let markers = L.markerClusterGroup();
     for (i in data) {
-        const marker = L.marker([parseFloat(data[i]["latitude"]), parseFloat(data[i]["longitude"])]);
-        marker.bindPopup(createPopupText(data[i]));
-        marker.on('click', () => markerOnClick(data[i]));
+        const markerData = data[i];
+        const marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])]);
+        marker.bindPopup(createPopupText(markerData));
+        marker.on('click', () => markerOnClick(markerData));
         markers.addLayer(marker);
     }
     map.addLayer(markers);
