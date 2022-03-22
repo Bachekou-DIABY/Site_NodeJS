@@ -74,8 +74,9 @@ header nav a:hover{
     background: linear-gradient(to right,#f0b190, #f99c2a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: 900px;
-    height: 215px;
+    width: fit-content;
+    height: auto;
+    max-height: 20vh;
     margin-bottom: 30px;
 }
 .info .paragraphe{
@@ -112,19 +113,19 @@ header nav a:hover{
 }
 .accueil .img_hydro{
     position: absolute;
-    top: 35vh;
+    bottom: 6vh;
     left: 0;
     width: 50%;
-    height: 60%;
+    height: auto;
     object-fit: cover;
     pointer-events: none;
 }
 .accueil .img_nuclear{
     position: absolute;
-    top: 35vh;
+    bottom: 6vh;
     right: 0;
     width: 50%;
-    height: 60%;
+    height: auto;
     object-fit: cover;
     pointer-events: none;
 }
