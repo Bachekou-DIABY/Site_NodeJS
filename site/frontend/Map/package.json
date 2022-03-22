@@ -10,6 +10,7 @@
   "description": "",
   "dependencies": {
     "express": "^4.17.3",
-    "mongoose": "^6.2.6"
+    "mongoose": "^6.2.6",
+    "leaflet.markercluster": "^1.5.3"
   }
 }

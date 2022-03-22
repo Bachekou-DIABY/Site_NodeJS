@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+}
+header{
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: none;
+    background: linear-gradient(to right,#f0b190, #f99c2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a{
+    color: #f99c2a;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property: background, color;
+}
+
+header nav a:hover{
+    background: linear-gradient(to bottom, #f0b190, #f99c2a);
+    color: #fff;
+}
+.accueil{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.info{
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.info .titre{
+    font-family: cursive;
+    font-size: 7em;
+    background: linear-gradient(to right,#f0b190, #f99c2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    height: auto;
+    max-height: 20vh;
+    margin-bottom: 30px;
+}
+.info .paragraphe{
+    color: #000;
+    font-size: 1.2em;
+    width: 50%;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+}
+.info .btn{
+    font-size: 1.3em;
+    font-weight: 500;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #f0b190, #f99c2a);
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.info .btn:hover{
+    transform: scale(1.05);
+    color: #fff;
+}
+.accueil  img:first-child{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.accueil .img_hydro{
+    position: absolute;
+    bottom: 6vh;
+    left: 0;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+}
+.accueil .img_nuclear{
+    position: absolute;
+    bottom: 6vh;
+    right: 0;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+}
+.img_hydro{
+    z-index: 9;
+    transform: translate(-600px);
+    transition: 0.8s;
+}
+.img_nuclear{
+    z-index: 9;
+    transform: translate(+600px);
+    transition: 0.8s;
+
+}
+.logo, nav{
+    transform: translateY(-70px);
+    transition: 0.8s;
+}
+.content{
+    z-index: 10;
+    position: relative;
+    padding: 90px 100px;
+    background-color: #547701;
+}
+
+
+

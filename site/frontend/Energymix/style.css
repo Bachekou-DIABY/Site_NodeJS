@@ -1,0 +1,108 @@
+html{
+    background-color: #10181d;
+    overflow-x: hidden;
+}
+
+
+.container-data{
+    position: relative;
+    background-color: #10181d;
+    color: wheat;
+    height: auto;
+    width: 100vw;
+    padding: 1vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.container-data > h1:first-child{
+    padding: 30px;
+    font-size: 2em;
+}
+/*PRODUCTION*/
+#container-production{
+    margin: 1%;
+    position: relative;
+    background-color: black;
+    color: wheat;
+    padding: 2%;
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.prod{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod > img {
+    width: 50px;
+    height: 50px;
+}
+
+.prod-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.prod-nom{
+    font-size: 1.5em;
+}
+
+.prod-prod{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1em;
+}
+
+/*POURCENTAGE*/
+#container-pourcentage{
+    margin: 1%;
+    position: relative;
+    background-color: black;
+    color: wheat;
+    padding: 2%;
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.pourcen{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pourcen-nom{
+    font-size: 1.5em;
+}
+
+.pourcen-pourcen{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+
+
+footer{
+    background-color: #15252c;
+    color: #eeee;
+    position: relative;
+    bottom: 0;
+    margin: 0;
+    width: 100vw;
+    padding: 1%
+}
