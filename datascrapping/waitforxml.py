@@ -8,6 +8,7 @@ import pandas as pd
 import requests
 
 CSV_FILENAME = 'out.csv'
+JSON_FILENAME = 'out.json'
 # pour retrouver ce lien aller sur www.rte-france.com/eco2mix/synthese-des-donnees
 # inpecter la page puis dans l'ongler "Network" ne selectionner que les fichier de type "XHR"
 # au chargement de la page des GET sont éffectué on peut ensuite cliquer dessus les regarder en détails
@@ -51,14 +52,11 @@ for tag in tags:
 df.to_csv(CSV_FILENAME, index=False)
 
 df = pd.read_csv(CSV_FILENAME)
-df["Pourcentage"] = round((df[date]/sommeProd)*100, 1)
+df["Pourcentage"] = round((df["Production"]/sommeProd)*100, 1)
+
+
 df.to_csv(CSV_FILENAME, index=False)
+df.to_json(JSON_FILENAME, orient = "records")
 
 print(date)
 print(df)
-
-
-
-
-
-
