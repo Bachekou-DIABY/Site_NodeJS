@@ -2,10 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 body{
     min-height: 100vh;
+    overflow-x: hidden;
 }
 header{
     z-index: 999;
@@ -49,6 +51,10 @@ header nav a:hover{
     background: linear-gradient(to bottom, #f0b190, #f99c2a);
     color: #fff;
 }
+.logo, nav{
+    transform: translateY(-70px);
+    transition: 0.8s;
+}
 .accueil{
     position: relative;
     width: 100%;
@@ -69,7 +75,7 @@ header nav a:hover{
 }
 
 .info .titre{
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 7em;
     background: linear-gradient(to right,#f0b190, #f99c2a);
     -webkit-background-clip: text;
@@ -82,7 +88,7 @@ header nav a:hover{
 .info .paragraphe{
     color: #000;
     font-size: 1.2em;
-    width: 50%;
+    width: 40%;
     margin-bottom: 40px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
@@ -140,15 +146,44 @@ header nav a:hover{
     transition: 0.8s;
 
 }
-.logo, nav{
-    transform: translateY(-70px);
-    transition: 0.8s;
-}
 .content{
     z-index: 10;
     position: relative;
     padding: 90px 100px;
     background-color: #547701;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+.card{
+    margin: 10px;
+    padding: 10px;
+    width: 15vw;
+    height: 20vw;
+    background: linear-gradient(to bottom, #f0f4f9, #f4f5f9);
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+}
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.card-title{
+    font-size: 1.5em;
+}
+.card-text{
+    font-size: 1em;
+}
+.card > img{
+    width: 14vw;
+    height: 14vw;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 
