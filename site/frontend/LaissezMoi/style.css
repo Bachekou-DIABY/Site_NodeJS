@@ -56,6 +56,7 @@ header nav a:hover{
     transform: translateY(-70px);
     transition: 0.8s;
 }
+/*PAGE ACCUEIL*/
 .accueil{
     position: relative;
     width: 100%;
@@ -147,6 +148,28 @@ header nav a:hover{
     transition: 0.8s;
 
 }
+/*SHAPE DIVIDER*/
+.custom-shape-divider-bottom-1648301297 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1648301297 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 46px;
+}
+
+.custom-shape-divider-bottom-1648301297 .shape-fill {
+    fill: #78A206;
+}
+/*CONTENU DE LA PAGE*/
 .content{
     z-index: 10;
     position: relative;
@@ -156,12 +179,13 @@ header nav a:hover{
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
+    height: 100vh;
 }
 .card{
     margin: 10px;
     padding: 10px;
-    width: 15vw;
-    height: 20vw;
+    width: 18vw;
+    height: 22vw;
     background: linear-gradient(to bottom, #f0f4f9, #f4f5f9);
     border-radius: 10px;
     color: black;
@@ -182,7 +206,7 @@ header nav a:hover{
     font-size: 1.5em;
 }
 .card-text{
-    font-size: 0.9em;
+    font-size: 1em;
 }
 .card > img{
     width: 100%;
@@ -190,6 +214,62 @@ header nav a:hover{
     object-fit: cover;
     border-radius: 10px;
 }
+/*FOOTER*/
+footer{
+    background-color:#546201;
+    padding:45px;
+    font-size:0.9em;
+    line-height:24px;
+    color:#fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+footer .apropos{
+    width: 40%;
+    text-align: justify;
+}
+
+footer h6
+{
+    color:#fff;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-bottom: 6px;
+    letter-spacing:2px
+}
+
+footer a{
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color:#ccc;
+}
+
+.footer-links{
+    padding-left:0;
+    list-style:none
+}
+
+.footer-links li{
+    display:block
+}
+
+.footer-links.inline li{
+    display:inline-block
+}
+
+
+
+
+
+
+
+
 
 
 
