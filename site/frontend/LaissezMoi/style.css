@@ -1,3 +1,23 @@
+:root{
+    font-size: 16px;
+
+    --clr-text-primary: #f99c2a;
+    --clr-text-secondary: #f0b190;
+    --clr-text-content: #000;
+    --clr-text-default: #fff;
+    --clr-text-dafault-hover: #ccc;
+
+    --clr-background-content: #547701;
+    --clr-background-footer: #546201;
+    --clr-background-card: #fff;
+
+    --fs-xl: clamp(3.5rem, 8vw +  1rem, 7rem);
+    --fs-l: clamp(0.5rem, 0.2vw +  1rem, 1.3rem);
+    --fs-m: clamp(0.3rem, 0.1vw +  1rem, 1rem);
+    --fs-s: clamp(0.2rem, 0.1vw +  1rem, 0.9rem);
+
+    overflow-x: hidden;
+}
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +28,6 @@
 }
 body{
     min-height: 100vh;
-    overflow-x: hidden;
 }
 header{
     z-index: 999;
@@ -20,13 +39,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow-x: hidden;
 }
 header .logo{
-    font-size: 2em;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: 800;
     text-decoration: none;
-    background: linear-gradient(to right,#f0b190, #f99c2a);
+    background: linear-gradient(to right,var(--clr-text-secondary), var(--clr-text-primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -37,8 +57,8 @@ header nav{
 }
 
 header nav a{
-    color: #f99c2a;
-    font-size: 1.1em;
+    color: var(--clr-text-primary);
+    font-size: var(--fs-l);
     font-weight: 500;
     text-decoration: none;
     margin-left: 20px;
@@ -49,8 +69,8 @@ header nav a{
 }
 
 header nav a:hover{
-    background: linear-gradient(to bottom, #f0b190, #f99c2a);
-    color: #fff;
+    background: linear-gradient(to bottom, var(--clr-text-secondary), var(--clr-text-primary));
+    color: var(--clr-text-default);
 }
 .logo, nav{
     transform: translateY(-70px);
@@ -66,6 +86,7 @@ header nav a:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-x: hidden;
 }
 .info{
     z-index: 10;
@@ -78,38 +99,36 @@ header nav a:hover{
 
 .info .titre{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 7vw;
-    background: linear-gradient(to right,#f0b190, #f99c2a);
+    font-size: var(--fs-xl);
+    background: linear-gradient(to right,var(--clr-text-secondary), var(--clr-text-primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     width: fit-content;
-    height: auto;
-    max-height: 20vh;
-    margin-bottom: 30px;
+    margin-bottom: 2vh;
 }
 .info .paragraphe{
     color: #000;
-    font-size: 1.2em;
+    font-size: var(--fs-l);
     width: 40%;
-    min-width: 300px;
+    min-width: 250px;
     margin-bottom: 40px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 10px;
 }
 .info .btn{
-    font-size: 1.3em;
+    font-size: var(--fs-l);
     font-weight: 500;
     text-decoration: none;
-    background: linear-gradient(to bottom, #f0b190, #f99c2a);
-    color: #fff;
+    background: linear-gradient(to bottom, var(--clr-text-secondary), var(--clr-text-primary));
+    color: var(--clr-text-default);
     padding: 10px 35px;
     border-radius: 5px;
     transition: 0.3s;
 }
 .info .btn:hover{
     transform: scale(1.05);
-    color: #fff;
+    color: var(--clr-text-default);
 }
 .accueil  img:first-child{
     position: absolute;
@@ -151,6 +170,18 @@ header nav a:hover{
     transition: 0.8s;
 
 }
+@media  only screen and (max-width: 600px) {
+    .accueil .img_nuclear{
+        display: none;
+    }
+    header nav{
+        display: none;
+    }
+    footer .apropos{
+        display: none;
+    }
+    
+}
 /*SHAPE DIVIDER*/
 .custom-shape-divider-bottom-1648301297 {
     position: absolute;
@@ -177,9 +208,9 @@ header nav a:hover{
     z-index: 10;
     position: relative;
     padding: 90px 100px;
-    background-color: #547701;
+    background-color: var(--clr-background-content);
     display: grid;
-    grid-template-columns: repeat(auto-fit, 20rem);
+    grid-template-columns: repeat(auto-fit, 25rem);
     justify-content:space-evenly;
     height: fit-content;
 }
@@ -188,11 +219,11 @@ header nav a:hover{
     padding: 10px;
     width: 18vw;
     height: 22vw;
-    min-width: 300px;
-    min-height: 400px;
+    min-width: 325px;
+    min-height: 425px;
     background: linear-gradient(to bottom, #f0f4f9, #f4f5f9);
     border-radius: 10px;
-    color: black;
+    color: var(--clr-text-content);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -207,10 +238,10 @@ header nav a:hover{
     padding: 1vh;
 }
 .card-title{
-    font-size: 1.5em;
+    font-size: var(--fs-l);
 }
 .card-text{
-    font-size: 1em;
+    font-size: var(--fs-m);
 }
 .card > img{
     width: 100%;
@@ -220,15 +251,16 @@ header nav a:hover{
 }
 /*FOOTER*/
 footer{
-    background-color:#546201;
+    background-color:var(--clr-background-footer);
     padding:45px;
-    font-size:0.9em;
+    font-size:var(--fs-s);
     line-height:24px;
-    color:#fff;
+    color:var(--clr-text-default);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
+    overflow-x: hidden;
 }
 
 footer .apropos{
@@ -238,20 +270,20 @@ footer .apropos{
 
 footer h6
 {
-    color:#fff;
-    font-size:16px;
+    color:var(--clr-text-default);
+    font-size:var(--fs-m);
     text-transform:uppercase;
     margin-bottom: 6px;
     letter-spacing:2px
 }
 
 footer a{
-    color: #fff;
+    color: var(--clr-text-default);
     text-decoration: none;
 }
 
 footer a:hover{
-    color:#ccc;
+    color:var(--clr-text-dafault-hover);
 }
 
 .footer-links{
