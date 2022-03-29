@@ -4,15 +4,16 @@
 <head>
     <meta charset="utf-8">
     <title>Test leaflet</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="energymix.css">
     <script src="script.js"></script>
 </head>
 
 <body>
     <header>
-        <a href="../Accueil/index.html" class="logo">RC1</a>
+        <a href="../Accueil/accueil.html" class="logo">RC1</a>
         <nav>
-            <a href="../Accueil/index.html">Accueil</a>
+            <a href="../Accueil/accueil.html">Accueil</a>
             <a href="../Map/map.html">Carte</a>
             <a href="../Energymix/energymix.html">Mix Energétique</a>
             <a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fanotherwhiskyformisterbukowski.com%2Fwp-content%2Fuploads%2F2016%2F01%2Fnon.jpg&f=1&nofb=1">A Propos</a>
@@ -25,63 +26,18 @@
         <!--PRODUCTION-->
         <div class="data-container">
             <div class="production">
-                <div id="container-production">
-                    
-                </div>
+                <div id="container-production"></div>
                 <img src="../../../data/piechartexemple.jpg">
             </div>
             <!-- <img src="../../../data/piechartexemple.jpg"> -->
             <!--POURCENTAGE-->
-            <div id="container-pourcentage">
-                 <div class="pourcen">
-                     <span class="pourcen-nom">Nucléaire</span>
-                     <div class="pourcen-pourcen">
-                         <span>60</span>
-                         <span>%</span>
-                     </div>
-                </div>
-                <div class="pourcen">
-                 <span class="pourcen-nom">Charbon</span>
-                 <div class="pourcen-pourcen">
-                     <span>30</span>
-                     <span>%</span>
-                 </div>
-                 </div>  
-                 <div class="pourcen">
-                     <span class="pourcen-nom">Gaz</span>
-                     <div class="pourcen-pourcen">
-                         <span>10</span>
-                         <span>%</span>
-                     </div>
-                </div> 
-            </div>
+            <div id="container-pourcentage"></div>
         </div>
     </section>
     
     </div>
 
     <script type="text/javascript">
-
-        //V1
-        // fetch('csvjson.json').then(function(){
-        //     return response.json();
-        // }).then(function(obj){
-        //     console.log(obj);
-        // }).catch(function(error){
-        //     console.log("Oups")
-        //     console.log(error);
-        // });
-        
-        //V2
-        // fetch("csvjson.json")
-        //     .then(response => response.json())
-        //     .then(json => console.log(json));
-        
-        //V3
-        // let json = require('csvjson.json');
-        // console.log(json);
-
-
         const nav = document.querySelector("nav");
         const logo = document.querySelector(".logo");
 

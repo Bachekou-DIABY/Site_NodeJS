@@ -8,9 +8,10 @@ http.send();
 http.onload = function(){
     if(this.readyState == 4 && this.status==200){
         let products = JSON.parse(this.responseText);
-        let output = "";
+        //PRODUCTION
+        let output_prod = "";
         for(let items of products){
-            output += `
+            output_prod += `
             <div class="prod">
                 <img src="./energyLogo.png">
                 <div class="prod-text">
@@ -22,6 +23,19 @@ http.onload = function(){
                 </div>
            </div>`;
         }
-        document.querySelector("#container-production").innerHTML = output;
+        document.querySelector("#container-production").innerHTML = output_prod;
+        //POURCENTAGE
+        let output_poucentage = "";
+        for(let items of products){
+            output_poucentage += `
+                <div class="pourcen">
+                     <span class="pourcen-nom">${items.Filieres}</span>
+                     <div class="pourcen-pourcen">
+                         <span>${items.Pourcentage}</span>
+                         <span>%</span>
+                     </div>
+                </div>`;
+        }
+        document.querySelector("#container-pourcentage").innerHTML = output_poucentage   ;
     }
 }

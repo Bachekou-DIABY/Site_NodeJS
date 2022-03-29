@@ -54,6 +54,7 @@ df.to_csv(CSV_FILENAME, index=False)
 df = pd.read_csv(CSV_FILENAME)
 df["Pourcentage"] = round((df["Production"]/sommeProd)*100, 1)
 
+#df.sort_values(by='Pourcentage', ascending=False)
 
 df.to_csv(CSV_FILENAME, index=False)
 df.to_json(JSON_FILENAME, orient = "records")
