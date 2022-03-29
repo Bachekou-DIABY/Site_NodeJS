@@ -1,4 +1,4 @@
-console.log('test');
+console.log('fichier JS pour JSON executé');
 
 
 let http = new XMLHttpRequest();

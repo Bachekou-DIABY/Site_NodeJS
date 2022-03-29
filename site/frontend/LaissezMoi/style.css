@@ -210,7 +210,7 @@ header nav a:hover{
     padding: 90px 100px;
     background-color: var(--clr-background-content);
     display: grid;
-    grid-template-columns: repeat(auto-fit, 25rem);
+    grid-template-columns: repeat(auto-fit, 15rem);
     justify-content:space-evenly;
     height: fit-content;
 }
@@ -219,8 +219,8 @@ header nav a:hover{
     padding: 10px;
     width: 18vw;
     height: 22vw;
-    min-width: 325px;
-    min-height: 425px;
+    min-width: 200px;
+    min-height: 300px;
     background: linear-gradient(to bottom, #f0f4f9, #f4f5f9);
     border-radius: 10px;
     color: var(--clr-text-content);

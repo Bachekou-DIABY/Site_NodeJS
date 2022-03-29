@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Test leaflet</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -90,6 +90,27 @@
     </div>
 
     <script type="text/javascript">
+
+        //V1
+        // fetch('csvjson.json').then(function(){
+        //     return response.json();
+        // }).then(function(obj){
+        //     console.log(obj);
+        // }).catch(function(error){
+        //     console.log("Oups")
+        //     console.log(error);
+        // });
+        
+        //V2
+        // fetch("csvjson.json")
+        //     .then(response => response.json())
+        //     .then(json => console.log(json));
+        
+        //V3
+        // let json = require('csvjson.json');
+        // console.log(json);
+
+
         const nav = document.querySelector("nav");
         const logo = document.querySelector(".logo");
 
