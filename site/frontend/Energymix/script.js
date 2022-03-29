@@ -2,7 +2,7 @@ console.log('fichier JS pour JSON executé');
 
 
 let http = new XMLHttpRequest();
-http.open('get', 'csvjson.json', true);
+http.open('get', 'https://raw.githubusercontent.com/Mochtek/data/main/csvjson.json', true);
 http.send();
 
 http.onload = function(){
