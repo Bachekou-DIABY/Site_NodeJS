@@ -1,8 +1,8 @@
-Filieres,Production
-Nucléaire,30330
-Charbon,608
-Gaz,6756
-Fioul,189
-Hydraulique,3743
-Eolien,1474
-Solaire,2442
+Filieres,Production,Pourcentage
+Nucléaire,31828,59.1
+Charbon,21,0.0
+Gaz,5976,11.1
+Fioul,139,0.3
+Hydraulique,4720,8.8
+Eolien,5099,9.5
+Solaire,6100,11.3
