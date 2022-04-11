@@ -80,12 +80,61 @@ function markerOnClick (data) {
     cardContent.innerHTML = text;
 }
 
+var nuclearIcon = L.icon({
+    iconUrl: "icons/nuclearIcon.png",
+    iconSize:     [50, 50], // size of the icon
+    iconAnchor:   [25, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+});
+
+var solarIcon = L.icon({
+    iconUrl: "icons/solarIcon.png",
+    iconSize:     [60, 70], // size of the icon
+    iconAnchor:   [30, 60], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
+var windIcon = L.icon({
+    iconUrl: "icons/windIcon.png",
+    iconSize:     [50, 50], // size of the icon
+    iconAnchor:   [25, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+});
+
+var hydroIcon = L.icon({
+    iconUrl: "icons/hydroIcon.png",
+    iconSize:     [50, 50], // size of the icon
+    iconAnchor:   [25, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
+var oilIcon = L.icon({
+    iconUrl: "icons/oilIcon.png",
+    iconSize:     [25, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
 // Prend un object js contenant des champs "latitude" et "longitude"
 function createMarkers(data) {
     let markers = L.markerClusterGroup();
     for (i in data) {
         const markerData = data[i];
-        const marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])]);
+
+        let marker;
+        if (markerData["primary_fuel"] == "Nuclear")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: nuclearIcon});
+        else if (markerData["primary_fuel"] == "Solar")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: solarIcon});
+        else if (markerData["primary_fuel"] == "Wind")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: windIcon});
+        else if (markerData["primary_fuel"] == "Hydro")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: hydroIcon});
+        else if (markerData["primary_fuel"] == "Oil")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: oilIcon});
+        else
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])]);
+
         marker.bindPopup(createPopupText(markerData));
         marker.on('click', () => markerOnClick(markerData));
         markers.addLayer(marker);
