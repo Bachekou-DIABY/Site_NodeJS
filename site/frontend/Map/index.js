@@ -63,11 +63,20 @@ function createPopupText(data) {
 function markerOnClick (data) {
     let text = "";
     for (key in data) {
+        if (data[key] == "") continue;
         text += key + " : ";
-        text += data[key];
-        text += "<br>";
+        if (key == "url") {
+            text += "<a target=_blank href=";
+            text += data[key];
+            text += ">"
+            text += data[key];
+            text += "</a>";
+        }
+        else
+            text += data[key];
+        text += "<br><br>";
     }
-    const cardContent = document.getElementById("card-content");
+    const cardContent = document.getElementById("infos-centrale");
     cardContent.innerHTML = text;
 }
 

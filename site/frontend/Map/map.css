@@ -28,7 +28,7 @@
     margin: 10px;
     width: 20%;
     height: 100%;
-    padding: 4% 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
     display: flex;
     flex-direction: column;
     background-color: #417aac;
@@ -37,4 +37,6 @@
 .interaction-container .card{
     margin-top: 10px;
 }
-
+#infos-centrale {
+    overflow: auto;
+}
