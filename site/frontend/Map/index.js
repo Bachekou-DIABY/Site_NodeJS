@@ -43,16 +43,14 @@ function toObject(string) {
 function createPopupText(markerData) {
     let keys = [
         "name",
-        "country",
-        "latitude",
-        "longitude",
+        "country_long",
         "primary_fuel",
         "capacity_mw"
     ];
     let res = "";
 
     keys.forEach(key => {
-        res += key + " : ";
+        res += "<span>"+key+"</span> : ";
         res += markerData[key];
         res += "<br>";
     });
@@ -63,76 +61,96 @@ function createPopupText(markerData) {
 // Gestion de l'évennement onClick des marqueurs
 // Entrée : les données associées au marqueur
 function markerOnClick(markerData) {
+    const toDisplay = ["country_long", "name", "capacity_mw", "latitude", "longitude", "primary_fuel", "owner", "url"];
     let text = "";
     for (key in markerData) {
-        if (markerData[key] == "") continue;
-        text += key + " : ";
+        //if (markerData[key] == "" || key=="country") continue;
+        if (markerData[key] == "" || !toDisplay.includes(key)) continue;
+        text += "<span>"+key+"</span> : ";
         if (key == "url") {
             text += "<a target=_blank href=";
             text += markerData[key];
-            text += ">"
-            text += markerData[key];
-            text += "</a>";
+            text += ">ici</a>";
         } else
             text += markerData[key];
         text += "<br><br>";
     }
+
     const cardContent = document.getElementById("infos-centrale");
     cardContent.innerHTML = text;
 }
 
 var nuclearIcon = L.icon({
     iconUrl: "icons/nuclearIcon.png",
-    iconSize: [50, 50], // size of the icon
-    iconAnchor: [25, 50], // point of the icon which will correspond to marker's location
+    iconSize:    [50, 50], // size of the icon
+    iconAnchor:  [25, 50], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -50] // point from which the popup should open relative to the iconAnchor
 });
 
 var solarIcon = L.icon({
     iconUrl: "icons/solarIcon.png",
-    iconSize: [60, 70], // size of the icon
-    iconAnchor: [30, 60], // point of the icon which will correspond to marker's location
+    iconSize:    [40, 40], // size of the icon
+    iconAnchor:  [30, 60], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
 var windIcon = L.icon({
     iconUrl: "icons/windIcon.png",
-    iconSize: [50, 50], // size of the icon
-    iconAnchor: [25, 50], // point of the icon which will correspond to marker's location
+    iconSize:    [40, 40], // size of the icon
+    iconAnchor:  [25, 50], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -50] // point from which the popup should open relative to the iconAnchor
 });
 
 var hydroIcon = L.icon({
     iconUrl: "icons/hydroIcon.png",
-    iconSize: [50, 50], // size of the icon
-    iconAnchor: [25, 40], // point of the icon which will correspond to marker's location
+    iconSize:    [50, 50], // size of the icon
+    iconAnchor:  [25, 40], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
 var oilIcon = L.icon({
     iconUrl: "icons/oilIcon.png",
-    iconSize: [25, 40], // size of the icon
-    iconAnchor: [12, 40], // point of the icon which will correspond to marker's location
+    iconSize:    [50, 50], // size of the icon
+    iconAnchor:  [12, 40], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
 var biomassIcon = L.icon({
     iconUrl: "icons/biomassIcon.png",
-    iconSize:     [25, 40], // size of the icon
+    iconSize:     [40, 40], // size of the icon
     iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
 var coalIcon = L.icon({
     iconUrl: "icons/coalIcon.png",
-    iconSize:     [25, 40], // size of the icon
+    iconSize:     [40, 40], // size of the icon
     iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
 var gasIcon = L.icon({
     iconUrl: "icons/gazIcon.png",
-    iconSize:     [25, 40], // size of the icon
+    iconSize:     [40, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
+var wasteIcon = L.icon({
+    iconUrl: "icons/wasteIcon.png",
+    iconSize:     [40, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+var geothermalIcon = L.icon({
+    iconUrl: "icons/geothermalIcon.png",
+    iconSize:     [50, 50], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+var waveIcon = L.icon({
+    iconUrl: "icons/waveIcon.png",
+    iconSize:     [40, 40], // size of the icon
     iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
 });
@@ -162,6 +180,12 @@ function createMarkers(styled) {
                 marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: biomassIcon});
             else if (markerData["primary_fuel"] == "Gas")
                 marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: gasIcon});
+            else if (markerData["primary_fuel"] == "Waste")
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: wasteIcon});
+            else if (markerData["primary_fuel"] == "Geothermal")
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: geothermalIcon});
+            else if (markerData["primary_fuel"] == "Wave and Tidal")
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: waveIcon});
             else
                 marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])]);
         }
