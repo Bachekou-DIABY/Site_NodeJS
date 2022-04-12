@@ -116,6 +116,27 @@ var oilIcon = L.icon({
     popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
+var biomassIcon = L.icon({
+    iconUrl: "icons/biomassIcon.png",
+    iconSize:     [25, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
+var coalIcon = L.icon({
+    iconUrl: "icons/coalIcon.png",
+    iconSize:     [25, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
+var gasIcon = L.icon({
+    iconUrl: "icons/gazIcon.png",
+    iconSize:     [25, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
 // Prend un object js contenant des champs "latitude" et "longitude"
 // Styled est un booleen avec true pour les icons et false pour les marqueur
 // par défauts
@@ -126,28 +147,25 @@ function createMarkers(styled) {
         let marker;
         if (styled) {
             if (markerData["primary_fuel"] == "Nuclear")
-                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {
-                    icon: nuclearIcon
-                });
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: nuclearIcon});
             else if (markerData["primary_fuel"] == "Solar")
-                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {
-                    icon: solarIcon
-                });
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: solarIcon});
             else if (markerData["primary_fuel"] == "Wind")
-                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {
-                    icon: windIcon
-                });
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: windIcon});
             else if (markerData["primary_fuel"] == "Hydro")
-                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {
-                    icon: hydroIcon
-                });
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: hydroIcon});
             else if (markerData["primary_fuel"] == "Oil")
-                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {
-                    icon: oilIcon
-                });
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: oilIcon});
+            else if (markerData["primary_fuel"] == "Coal")
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: coalIcon});
+            else if (markerData["primary_fuel"] == "Biomass")
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: biomassIcon});
+            else if (markerData["primary_fuel"] == "Gas")
+                marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: gasIcon});
             else
                 marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])]);
-        } else
+        }
+        else
             marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])]);
 
         marker.bindPopup(createPopupText(markerData));
