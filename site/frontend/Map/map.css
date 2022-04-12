@@ -40,3 +40,12 @@
 #infos-centrale {
     overflow: auto;
 }
+.styledIcons {
+    position: absolute;
+    left: 10%;
+    top: 12%;
+}
+label.styledIcons {
+    left: 11.5%;
+    top: 11.5%;
+}
