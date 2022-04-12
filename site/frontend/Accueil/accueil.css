@@ -132,7 +132,7 @@
     padding: 90px 100px;
     background-color: var(--clr-background-content);
     display: grid;
-    grid-template-columns: repeat(auto-fit, 15rem);
+    grid-template-columns: repeat(auto-fit, 25rem);
     justify-content:space-evenly;
     height: fit-content;
 }

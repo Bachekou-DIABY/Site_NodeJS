@@ -1,0 +1,11 @@
+.contenu_page{
+    position: relative;
+    background-color: var(--clr-background-color);
+    height: 100vh   ;
+}
+
+.contenu_page > div {
+    position: relative;
+    margin-top: 300px;
+    background-color: red;
+}

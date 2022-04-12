@@ -115,6 +115,26 @@ var oilIcon = L.icon({
     popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
+var biomassIcon = L.icon({
+    iconUrl: "icons/biomassIcon.png",
+    iconSize:     [25, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
+var coalIcon = L.icon({
+    iconUrl: "icons/coalIcon.png",
+    iconSize:     [25, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
+
+var gasIcon = L.icon({
+    iconUrl: "icons/gazIcon.png",
+    iconSize:     [25, 40], // size of the icon
+    iconAnchor:   [12, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+});
 // Prend un object js contenant des champs "latitude" et "longitude"
 function createMarkers(data) {
     let markers = L.markerClusterGroup();
@@ -132,6 +152,12 @@ function createMarkers(data) {
             marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: hydroIcon});
         else if (markerData["primary_fuel"] == "Oil")
             marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: oilIcon});
+        else if (markerData["primary_fuel"] == "Coal")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: coalIcon});
+        else if (markerData["primary_fuel"] == "Biomass")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: biomassIcon});
+        else if (markerData["primary_fuel"] == "Gas")
+            marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])], {icon: gasIcon});
         else
             marker = L.marker([parseFloat(markerData["latitude"]), parseFloat(markerData["longitude"])]);
 
