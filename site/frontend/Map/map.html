@@ -30,25 +30,26 @@
     </header>
 
     <section class="contenu_page">
-            <div id="map-container">
-                <div id="map" class=""></div>
+        <div id="map-container">
+            <div id="map" class=""></div>
+        </div>
+        <div class="interaction-container">
+            <div id="infos-centrale">
+                <input type="file" id="csvfile" accept=".csv">
             </div>
-            <div class="interaction-container">
-                <div id="infos-centrale">
-                    <input type="file" id="csvfile" accept=".csv">
-                </div>
-            </div>
+        </div>
+        <input type="checkbox" id="styledIcons" class="styledIcons" name="styledIcons" checked>
+        <label class="styledIcons" for="styledIcons"> Styled Icons</label><br>
     </section>
 
     <script type="text/javascript">
         const nav = document.querySelector("nav");
         const logo = document.querySelector(".logo");
 
-        window.addEventListener("load", ()=>{
+        window.addEventListener("load", () => {
             nav.style.transform = "translateY(0)";
             logo.style.transform = "translateY(0)";
         })
-
     </script>
     <script src="index.js"></script>
 </body>
