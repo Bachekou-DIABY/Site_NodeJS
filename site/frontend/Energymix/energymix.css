@@ -1,4 +1,13 @@
+:root{
+    --clr-Nucléaire: #ff9f40;
+    --clr-Charbon: #404244;
+    --clr-Gaz: #ff6384;
+    --clr-Fioul: #4bc0c0;
+    --clr-Hydraulique: #36a2eb;
+    --clr-Eolien: #cecece;
+    --clr-Solaire: #ffcd56;
 
+}
 /*CONTENU*/
 .contenu_page{
     position: relative;
@@ -90,6 +99,12 @@ canvas {
     justify-content: center;
     font-size: var(--fs-m);
 }
+.marker{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
 
 /*POURCENTAGE*/
 #container-pourcentage{
@@ -123,4 +138,5 @@ canvas {
     justify-content: center;
     font-size: var(--fs-l);
 }
+
 

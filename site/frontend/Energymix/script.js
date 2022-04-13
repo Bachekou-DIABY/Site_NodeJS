@@ -27,11 +27,13 @@
              }]
          },
          options: {
+            maintainAspectRatio: false,
             responsive: false,
-            
+            plugins:{legend: {display: false},},
             scales: {
                 yAxes: [{gridLines: {drawBorder: false}}]
             }
+            
          }
      });
  }
@@ -51,7 +53,7 @@
              ylabels.push(items.Production)
              output_prod += `
              <div class="prod">
-                 <img src="./energyLogo.png">
+                 <div class="marker" style="background-color: var(--clr-${items.Filieres});"></div>
                  <div class="prod-text">
                      <span class="prod-nom">${items.Filieres}</span>
                      <div class="prod-prod">
