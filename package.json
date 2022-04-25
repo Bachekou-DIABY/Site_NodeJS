@@ -1,0 +1,19 @@
+{
+  "name": "alt-tab",
+  "version": "1.0.0",
+  "description": "<img src=\"./data/header.jpg\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@forge.univ-lyon1.fr:p2110727/lifprojet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}

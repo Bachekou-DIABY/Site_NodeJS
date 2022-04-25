@@ -7,18 +7,19 @@
     <link rel="icon" href="/img/nuclearIcon.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/energymix.css">
-    <script src="script.js"></script>
+    <script src="/script/energymix.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 </head>
 
 <body>
     <header>
-        <a href="../accueil" class="logo">RC1</a>
+        <a href="accueil" class="logo">RC1</a>
         <nav>
-            <a href="../accueil">Accueil</a>
-            <a href="../map">Carte</a>
-            <a href="../energymix">Mix Energétique</a>
-            <a href="../linky">Consommation Electrique</a>
+            <a href="accueil">Accueil</a>
+            <a href="map">Carte</a>
+            <a href="energymix">Mix Energétique</a>
+            <a href="stats">Statistiques</a>
+            <a href="linky">Consommation Electrique</a>
             <a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgur.com%2FOvMZBs9.jpg&f=1&nofb=1">A Propos</a>
         </nav>
     </header>
@@ -37,114 +38,21 @@
             <div id="container-pourcentage"></div>
         </div>
     </section>
-    
-    </div>
 
-    <script type="text/javascript">
-        //Chart.js
-        const xlabels = [];
-        const ylabels = [];
-
-        makeChart();
-        async function makeChart(){
-          
-            const CHART = document.getElementById('myChart');
-            const myChart = new Chart(CHART, {
-                type: 'bar',
-                data: {
-                    labels: xlabels,
-                    datasets: [{
-                        fontColor: '#f89f38',
-                        label: 'Production Electricité en direct',
-                        data: ylabels,
-                        backgroundColor: [
-                            'rgba(61, 243, 82, 0.4)',
-                            'rgba(0, 0, 0, 0.4)',
-                            'rgba(243, 66, 184, 0.4)',
-                            'rgba(153, 102, 255, 0.4)',
-                            'rgba(54, 162, 235, 0.4)',
-                            'rgba(255, 255, 255, 0.4)',
-                            'rgba(255, 206, 86, 0.4)'
-                        ],
-                        borderColor: [
-                            'rgb(61, 243, 82)',
-                            'rgb(0, 0, 0)',
-                            'rgb(243, 66, 184)',
-                            'rgb(153, 102, 255)',
-                            'rgb(54, 162, 235)',
-                            'rgb(255,255, 255)',
-                            'rgb(255, 206, 86)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: {display: false}
-                    },
-                    scales: {
-                        x: {ticks: {font :{size:20},color: 'white'}},
-                        y: {ticks: {font :{size:20},color: 'white'}}
-                    }
-                }
-            });
-        }
-        
-
-        let http = new XMLHttpRequest();
-        http.open('get', '/json', true);
-        http.send();
-        
-        http.onload = function(){
-            if(this.readyState == 4 && this.status==200){
-                let products = JSON.parse(this.responseText);
-                //PRODUCTION
-                let output_prod = "";
-                for(let items of products){
-                   xlabels.push(items.Filieres);
-                    ylabels.push(items.Production)
-                    output_prod += `
-                    <div class="prod">
-                        <img src="/img/energyLogo.png">
-                        <div class="prod-text">
-                            <span class="prod-nom">${items.Filieres}</span>
-                            <div class="prod-prod">
-                                <span>${items.Production}</span>
-                                <span>Mw</span>
-                            </div>
-                        </div>
-                </div>`;
-                }
-                document.querySelector("#container-production").innerHTML = output_prod;
-                //POURCENTAGE
-                let output_poucentage = "";
-                for(let items of products){
-                    output_poucentage += `
-                        <div class="pourcen">
-                            <span class="pourcen-nom">${items.Filieres}</span>
-                            <div class="pourcen-pourcen">
-                                <span>${items.Pourcentage}</span>
-                                <span>%</span>
-                            </div>
-                        </div>`;
-                }
-                document.querySelector("#container-pourcentage").innerHTML = output_poucentage   ;
-            }
-        }
-
-
-
-        //Décoration
-        const nav = document.querySelector("nav");
-        const logo = document.querySelector(".logo");
-
-        window.addEventListener("load", ()=>{
-            nav.style.transform = "translateY(0)";
-            logo.style.transform = "translateY(0)";
-        })
-
-    </script>
     
 </body>
+<script type="text/javascript">
 
+    const nav = document.querySelector("nav");
+    const logo = document.querySelector(".logo");
+    
+    window.addEventListener("load", ()=>{
+        nav.style.transform = "translateY(0)";
+        logo.style.transform = "translateY(0)";
+    })
+
+    document.getElementById("Valider").onclick = function () {
+    location.href = '/enedis/:AToken/:RToken/:Debut/:FIn';
+    };
+</script>
 </html>

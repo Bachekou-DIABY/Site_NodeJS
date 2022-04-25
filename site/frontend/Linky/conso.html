@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mix Energétique</title>
+    <link rel="icon" href="/img/nuclearIcon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/energymix.css">
+    <script src="/script/conso.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="accueil" class="logo">RC1</a>
+        <nav>
+            <a href="accueil">Accueil</a>
+            <a href="map">Carte</a>
+            <a href="energymix">Mix Energétique</a>
+            <a href="stats">Statistiques</a>
+            <a href="linky">Consommation Electrique</a>
+            <a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgur.com%2FOvMZBs9.jpg&f=1&nofb=1">A Propos</a>
+        </nav>
+    </header>
+    
+    <section class="contenu_page">
+        <!--TITRE-->
+        <h1>Consommation sur la période</h1>
+        <div class="data-container">
+            <!--PRODUCTION-->
+            <div class="production">
+                <div id="container-production"></div>
+                <!-- CHART.JS -->
+                <canvas id="myChart"></canvas>
+            </div>
+            <!--POURCENTAGE-->
+            <div id="container-pourcentage"></div>
+        </div>
+    </section>
+    
+    </div>
+    
+</body>
+<script type="text/javascript">
+
+
+    const nav = document.querySelector("nav");
+    const logo = document.querySelector(".logo");
+    
+    window.addEventListener("load", ()=>{
+        nav.style.transform = "translateY(0)";
+        logo.style.transform = "translateY(0)";
+    })
+
+    document.getElementById("Valider").onclick = function () {
+    location.href = '/enedis/:AToken/:RToken/:Debut/:Fin';
+    };
+</script>
+</html>
