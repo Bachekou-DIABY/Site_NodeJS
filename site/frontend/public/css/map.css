@@ -12,6 +12,7 @@
     background-color: #6399c7;
 }
 
+/*MAP*/
 #map-container {
     margin: 10px;
     height: 70vh;
@@ -24,17 +25,49 @@
     width: 100%;
     border-radius: 20px;
 }
+
+/*GRAND POPUP ON CLICK */
 .interaction-container{
     margin: 10px;
     width: 20%;
     height: 100%;
-    padding: 4% 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
     display: flex;
     flex-direction: column;
-    background-color: #417aac;
+    /* background-color: #417aac; */
+    background-color: #ffffff;
     border-radius: 20px;
 }
 .interaction-container .card{
     margin-top: 10px;
 }
+#infos-centrale {
+    overflow: auto;
+    background-color: #ffffff;
+    font-size: var(--fs-m);
+    text-decoration: none;
+}
+#infos-centrale > input{
+    width: 100%;
+    overflow-x: hidden;
+}
+#infos-centrale > span{
+    font-weight: bold;
+}
 
+
+/*PETIT POPUP ON CLICK*/
+.leaflet-popup-content > span{
+    font-weight: bold;
+}
+
+/*ICONS*/
+.styledIcons {
+    position: absolute;
+    left: 10%;
+    top: 12%;
+}
+label.styledIcons {
+    left: 11.5%;
+    top: 11.5%;
+}

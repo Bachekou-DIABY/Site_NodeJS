@@ -1,8 +1,16 @@
+:root{
+    --clr-Nucléaire: #ff9f40;
+    --clr-Charbon: #404244;
+    --clr-Gaz: #ff6384;
+    --clr-Fioul: #4bc0c0;
+    --clr-Hydraulique: #36a2eb;
+    --clr-Eolien: #cecece;
+    --clr-Solaire: #ffcd56;
 
+}
 /*CONTENU*/
 .contenu_page{
     position: relative;
-    border-radius: none;
     width: 100%;
     height: 100vh;
     padding: 100px;
@@ -48,9 +56,11 @@
     padding: 10px;
     height: 100%;
 }
-.production img{
-    width: 20vw;
-    height: 20vw;
+canvas {
+    margin: 10px;
+    width: auto !important;
+    height: 100% !important;
+    
 }
 #container-production{
     color: var(--clr-text-default);
@@ -90,6 +100,12 @@
     justify-content: center;
     font-size: var(--fs-m);
 }
+.marker{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
 
 /*POURCENTAGE*/
 #container-pourcentage{
@@ -123,3 +139,5 @@
     justify-content: center;
     font-size: var(--fs-l);
 }
+
+
