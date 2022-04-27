@@ -63,4 +63,8 @@ app.get('/stats', function (req, res) {
     res.sendFile(__dirname + '/Stats/stats.html');
 });
 
+app.get('/database', function (req, res) {
+    res.sendFile(__dirname + '/csv/database.csv');
+});
+
 module.exports = app;

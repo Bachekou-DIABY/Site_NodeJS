@@ -210,12 +210,44 @@ document.getElementById('csvfile').addEventListener('change', function() {
     if (!checkCSV(file)) return;
 
     var fr = new FileReader();
+    console.log(fr);
     fr.onloadend = function() {
         data = toObject(fr.result);
+        console.log(data);
         createMarkers(data);
     }
     fr.readAsText(this.files[0]);
 });
+/*
+let http = new XMLHttpRequest();
+http.open('get', "https://raw.githubusercontent.com/Mochtek/data/main/Database.csv" , true);
+
+http.onload=function(){
+    let database = CSV.parse(this.responseText);
+    var fr = new FileReader();
+    fr.onloadend = function() {
+        data = toObject(fr.result);
+        createMarkers(data);
+    }
+    fr.readAsText(database[0]);
+;
+}
+*/
+/*
+var database =
+	$.ajax({
+	  type: "GET",  
+	  url: "https://raw.githubusercontent.com/Mochtek/data/main/Database.csv",
+	  dataType: "text",       
+	  success: function(response)  
+	  {
+		database = $.csv.toArrays(response);
+		generateHtmlTable(database);
+	  }   
+
+	});
+*/
+
 
 document.getElementById('styledIcons').addEventListener('change', function() {
     if (data == {}) return;

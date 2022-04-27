@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Suivre ma consommation</title>
+    <link rel="icon" href="/img/nuclearIcon.png">
+
     <link rel="stylesheet" type="text/css" href="/css/linky.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -39,12 +41,13 @@
                 <input type="text" name="UToken" id="UToken" required>
             </div>
             <div class="form-example">
-                <label for="name">Fournissez la date a partir de laquelle vous souhaitez consulter vos donnnées (au format YYYY-MM-DD)</label>
-                <input type="text" name="Debut" id="Debut" required>
+                <label for="name">Fournissez la date a partir de laquelle vous souhaitez consulter vos donnnées </label>
+                <input type="text" pattern="d{4}/-d{1-2}/-d{1-2}" name="Debut" id="Debut" placeholder="YYYY-MM-DD " required>
             </div>
             <div class="form-example">
-                <label for="name">Fournissez la date a partir de laquelle vous souhaitez consulter vos donnnées (au format YYYY-MM-DD)</label>
-                <input type="text" name="Fin" id="Fin" required>
+                <label for="name">Fournissez la date a partir de laquelle vous souhaitez consulter vos donnnées</label>
+                <input type="text" pattern="d{4}/-d{1-2}/-d{1-2}" name="Fin" id="Fin" placeholder="YYYY-MM-DD "  required>
+
             </div>
             <div class="form-example">
               <input type="submit" value="Valider" id="Valider">
@@ -65,10 +68,6 @@
             nav.style.transform = "translateY(0)";
             logo.style.transform = "translateY(0)";
         })
-
-        document.getElementById("Valider").onclick = function () {
-        location.href = '/enedis/:AToken/:RToken/:Debut/:FIn';
-        };
     </script>
 </body>
 

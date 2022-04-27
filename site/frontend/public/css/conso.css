@@ -1,0 +1,131 @@
+:root{
+    --clr-Nucléaire: #ff9f40;
+    --clr-Charbon: #404244;
+    --clr-Gaz: #ff6384;
+    --clr-Fioul: #4bc0c0;
+    --clr-Hydraulique: #36a2eb;
+    --clr-Eolien: #cecece;
+    --clr-Solaire: #ffcd56;
+
+}
+/*CONTENU*/
+.contenu_page{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--clr-background-color);
+}
+.contenu_page h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--fs-xl);
+    background: linear-gradient(to right,var(--clr-text-secondary), var(--clr-text-primary));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+    width: 80%;
+    height: auto;
+    max-height: 20vh;
+    margin: 5vh auto 30px 0;
+}
+.data-container{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+/*PRODUCTION*/
+.production{
+    margin: 1%;
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color:var(--clr-background-section);
+    border-radius: 30px;
+    padding: 10px;
+    height: 100%;
+}
+canvas {
+    margin: 10px;
+    width: auto !important;
+    height: 100% !important;
+    
+}
+#container-production{
+    color: var(--clr-text-default);
+    padding: 2%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.prod{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod > img {
+    width: 50px;
+    height: 50px;
+}
+
+.prod-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.prod-nom{
+    font-size: var(--fs-l);
+}
+
+.prod-prod{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: var(--fs-m);
+}
+.marker{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+
+/*POURCENTAGE*/
+
+
+.pourcen{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pourcen-nom{
+    font-size: var(--fs-l);
+}
+
+.pourcen-pourcen{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: var(--fs-l);
+}
+
+
