@@ -76,12 +76,16 @@ app.get('/test', function (req, res) {
     await page.goto(`https://www.rte-france.com/eco2mix/synthese-des-donnees`);
     const data = await page.evaluate(()=>{
         let data = [];
+        let cpt=0;
         let elements = document.querySelectorAll('#chart-legend-623412095 > div.left-panel > div.icon-energy');
         for(element of elements){
-            data.push({
-                Filieres: element.querySelector('div > span.label-container').textContent,
-                Production: element.querySelector('div > span.value-container > div.render-value > div.value > div.value-label').textContent    
-            })
+            if(cpt>0){
+                data.push({
+                    Filieres: element.querySelector('div > span.label-container').textContent,
+                    Production: element.querySelector('div > span.value-container > div.render-value > div.value > div.value-label').textContent    
+                })
+            }
+            cpt++;
         }
         return data;
     });  
