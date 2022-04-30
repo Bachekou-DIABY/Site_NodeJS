@@ -26,7 +26,6 @@
     background: linear-gradient(to right,var(--clr-text-secondary), var(--clr-text-primary));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-
     width: 80%;
     height: auto;
     max-height: 20vh;

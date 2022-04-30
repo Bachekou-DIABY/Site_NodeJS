@@ -29,11 +29,7 @@
          options: {
             maintainAspectRatio: false,
             responsive: false,
-            plugins:{legend: {display: false},},
-            scales: {
-                //yAxes: [{gridLines: {drawBorder: false}}]
-            },
-            radius:245,            
+            plugins:{legend: {display: false},}            
          }
      });
  }
