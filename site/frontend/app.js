@@ -76,6 +76,7 @@ app.get('/test', function (req, res) {
     await page.goto(`https://www.rte-france.com/eco2mix/synthese-des-donnees`);
     const data = await page.evaluate(()=>{
         let data = [];
+        let total=0;
         let cpt=0;
         let elements = document.querySelectorAll('#chart-legend-623412095 > div.left-panel > div.icon-energy');
         for(element of elements){
@@ -84,8 +85,12 @@ app.get('/test', function (req, res) {
                     Filieres: element.querySelector('div > span.label-container').textContent,
                     Production: element.querySelector('div > span.value-container > div.render-value > div.value > div.value-label').textContent    
                 })
-            }
-            cpt++;
+                total+=parseInt(element.querySelector('div > span.value-container > div.render-value > div.value > div.value-label').textContent );
+            }   
+            cpt++;  
+        }
+        for(element of data){
+            element["Pourcentage"] = (parseInt(element["Production"])/total*100).toFixed(2);
         }
         return data;
     });  
