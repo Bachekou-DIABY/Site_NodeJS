@@ -27,37 +27,37 @@
     </header>
 
     <section class="contenu_page">  
-        <!-- TITRE -->
+        <!-- TITLE -->
         <div class="title_half">
             <h1>Consultez</h1>
             <h1>votre </h1>
             <h1>consomation</h1>
         </div>
         <div class="form_half">
-            <!-- INFORMATIONS -->
-            <div class="lienVersinformation">
-                <p>Vous pouvez retrouver vos tokens a l'adresse suivante --> <a id="enedis"href="https://conso.vercel.app/">Token Linky</a> </p>
-            </div>
             <!-- FORM -->
-            <form action="conso" method="GET" class="form-example">
-                <label for="token"></label>
-                <input type="text" name="AToken" id="AToken" placeholder="Access Token" required>            
-                
-                <label for="token"></label>
-                <input type="text" name="RToken" id="RToken" placeholder="Refresh Token" required>
-                         
-                <label for="point"></label>
-                <input type="text" name="UToken" id="UToken" placeholder="Usage Point" required>           
-                
-                <label for="date"></label>
-                <input type="text" pattern="d{4}/-d{1-2}/-d{1-2}" name="Debut" id="Debut" placeholder="de : YYYY-MM-DD " required>          
-                
-                <label for="date"></label>
-                <input type="text" pattern="d{4}/-d{1-2}/-d{1-2}" name="Fin" id="Fin" placeholder="jusqu'à : YYYY-MM-DD "  required>
-               
-                <input type="submit" value="Valider" id="Valider">
-                </div>
-            </form>    
+            <div class="form_div">
+                <form action="conso" method="GET" class="form-example">
+                    <label for="token"></label>
+                    <input type="text" name="AToken" id="AToken" placeholder="Access Token" required>            
+                    
+                    <label for="token"></label>
+                    <input type="text" name="RToken" id="RToken" placeholder="Refresh Token" required>
+                             
+                    <label for="point"></label>
+                    <input type="text" name="UToken" id="UToken" placeholder="Usage Point" required>           
+                    
+                    <label for="date"></label>
+                    <input type="text" pattern="d{4}/-d{1-2}/-d{1-2}" name="Debut" id="Debut" placeholder="de : YYYY-MM-DD " required>          
+                    
+                    <label for="date"></label>
+                    <input type="text" pattern="d{4}/-d{1-2}/-d{1-2}" name="Fin" id="Fin" placeholder="jusqu'à : YYYY-MM-DD "  required>
+                   
+                    <input type="submit" value="Valider" id="Valider">
+                    </div>
+                </form>  
+                 <!-- INFORMATIONS -->
+                <a id="enedis"href="https://conso.vercel.app/">comment avoir mes tokens ?</a>
+            </div>           
         </div>
         
     </section>
