@@ -65,8 +65,8 @@ app.get('/stats', function (req, res) {
     res.sendFile(__dirname + '/Stats/stats.html');
 });
 
-app.get('/database', function (req, res) {
-    res.sendFile(__dirname + '/csv/database.csv');
+app.get('/about', function (req, res) {
+    res.sendFile(__dirname + '/About/about.html');
 });
 
 app.get('/test', function (req, res) {
