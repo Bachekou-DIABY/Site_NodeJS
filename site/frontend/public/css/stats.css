@@ -15,20 +15,10 @@ html {
     height: fit-content;
 }
 
-div {
-    min-width: 200px;
-    min-height: 300px;
+.contenu_page > div, img{
     border-radius: 10px;
-    color: var(--clr-text-content);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    transition: 0.3s;
-    text-decoration: none;
-}
-
-img {
     border-style: solid;
     border-width: 10px;
     border-color: var(--clr-text-primary);
 }
+
