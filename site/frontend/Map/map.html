@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/map.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" integrity="" crossorigin="" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js" integrity="" crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
@@ -34,7 +34,7 @@
         </div>
         <div class="interaction-container">
             <div id="infos-centrale">
-                <input type="file" id="csvfile" accept=".csv">
+                <input type="file" id="csvfile" accept=".json">
             </div>
         </div>
         <input type="checkbox" id="styledIcons" class="styledIcons" name="styledIcons" checked>
@@ -51,7 +51,8 @@
             logo.style.transform = "translateY(0)";
         })
     </script>
-    <script src="/script/map.js"></script>
+    
+    <script type="text/javascript" src="/script/map.js"></script>
 </body>
 
 </html>

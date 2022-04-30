@@ -203,11 +203,12 @@ function clearMarkers() {
     map.removeLayer(markers);
     markers = L.markerClusterGroup();
 }
-
+/*
 document.getElementById('csvfile').addEventListener('change', function() {
     const file = event.target.files;
+    const json=JSON.parse(file.responseText)
 
-    if (!checkCSV(file)) return;
+    //if (!checkCSV(file)) return;
 
     var fr = new FileReader();
     console.log(fr);
@@ -216,8 +217,10 @@ document.getElementById('csvfile').addEventListener('change', function() {
         console.log(data);
         createMarkers(data);
     }
-    fr.readAsText(this.files[0]);
+    fr.readAsText(json.files[0]);
 });
+
+*/
 /*
 let http = new XMLHttpRequest();
 http.open('get', "https://raw.githubusercontent.com/Mochtek/data/main/Database.csv" , true);
