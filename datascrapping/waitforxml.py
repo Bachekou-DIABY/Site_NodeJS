@@ -60,4 +60,4 @@ df.to_csv(CSV_FILENAME, index=False)
 df.to_json(JSON_FILENAME, orient = "records")
 
 print(date)
-print(df)
+print(df.tojson())

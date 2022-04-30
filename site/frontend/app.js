@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const linky = require('linky');
 const bodyParser = require("body-parser");
+const puppeteer = require('puppeteer');
+
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,11 +20,10 @@ app.use('/map', function (req, res) {
 
 app.use('/energymix', function (req, res) {
     res.sendFile(__dirname + '/Energymix/energymix.html');
-});
-
+}); 
 
 app.get('/json', function (req, res) {
-    res.sendFile(__dirname + '/Energymix/out.json');
+    res.sendFile(__dirname + '/public/csv/out.json');
 });
 
 app.use('/linky', function (req, res) {
@@ -51,6 +52,7 @@ app.get('/enedis',  (req,res) => {
     });
     session.getDailyConsumption(Debut, Fin).then((conso) => {
     res.status(200).json(conso)
+    
     });
 
 });
@@ -66,5 +68,30 @@ app.get('/stats', function (req, res) {
 app.get('/database', function (req, res) {
     res.sendFile(__dirname + '/csv/database.csv');
 });
+
+app.get('/test', function (req, res) {
+(async () =>{
+    const browser = await puppeteer.launch({headless: true}); //headless=true ne plus voir l'interface graphique
+    const page = await browser.newPage(); 
+    await page.goto(`https://www.rte-france.com/eco2mix/synthese-des-donnees`);
+    const data = await page.evaluate(()=>{
+        let data = [];
+        let elements = document.querySelectorAll('#chart-legend-623412095 > div.left-panel > div.icon-energy');
+        for(element of elements){
+            data.push({
+                Filieres: element.querySelector('div > span.label-container').textContent,
+                Production: element.querySelector('div > span.value-container > div.render-value > div.value > div.value-label').textContent    
+            })
+        }
+        return data;
+    });  
+    res.status(200).json(data)
+    await browser.close();
+
+})();
+});
+
+
+
 
 module.exports = app;

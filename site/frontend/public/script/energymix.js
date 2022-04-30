@@ -31,16 +31,16 @@
             responsive: false,
             plugins:{legend: {display: false},},
             scales: {
-                yAxes: [{gridLines: {drawBorder: false}}]
-            }
-            
+                //yAxes: [{gridLines: {drawBorder: false}}]
+            },
+            radius:245,            
          }
      });
  }
  
 
  let http = new XMLHttpRequest();
- http.open('get', 'https://raw.githubusercontent.com/Mochtek/data/main/csvjson.json', true);
+ http.open('get', '/test', true);
  http.send();
  
  http.onload = function (){
