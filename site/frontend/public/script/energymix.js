@@ -14,14 +14,14 @@
                  label: 'Production Electricité en direct',
                  data: ylabels,
                  backgroundColor: [
-                    '#4bc0c0',//Fioul
+                    '#ff9f40',//Nucléaire
                     '#404244',//Charbon 
                     '#ff6384',//Gaz 
+                    '#4bc0c0',//Fioul
                     '#36a2eb',//Hydrolique
-                    '#ff9f40',//Nucléaire
-                    '#ffcd56',//Solaire
                     '#cecece',//Éolien
-                    '#71ca6d'//Bioénergies
+                    '#71ca6d',//Autres
+                    '#ffcd56'//Solaire 
                 ],
                  borderColor: ['rgba(0,0,0,0)'],
                  borderWidth: 1
