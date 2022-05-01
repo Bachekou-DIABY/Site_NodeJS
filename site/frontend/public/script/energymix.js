@@ -37,7 +37,7 @@
  
 
  let http = new XMLHttpRequest();
- http.open('get', '/test', true);
+ http.open('get', '/energymixAPI', true);
  http.send();
  
  http.onload = function (){

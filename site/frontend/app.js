@@ -71,7 +71,7 @@ app.get('/about', function (req, res) {
     res.sendFile(__dirname + '/About/about.html');
 });
 
-app.get('/test', function (req, res) {
+app.get('/energymixAPI', function (req, res) {
 (async () =>{
     const browser = await puppeteer.launch({headless: true}); //headless=true ne plus voir l'interface graphique
     const page = await browser.newPage(); 
