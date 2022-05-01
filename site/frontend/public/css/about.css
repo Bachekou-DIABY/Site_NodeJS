@@ -1,0 +1,25 @@
+.contenu_page{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--clr-background-color);
+}
+.presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: var(--clr-background-section);
+}
+.dev{
+    color: var(--clr-text-primary);
+    font-size: var(--fs-l);
+    font-weight: bold;
+}
