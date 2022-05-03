@@ -6,11 +6,7 @@
 ## Sommaire <!-- omit in toc -->
 - [A. Objectif](#a-objectif)
 - [B. Arborescence](#b-arborescence)
-- [C. Fonctionnalités](#c-fonctionnalités)
-	- [C.1. Comment compiler le projet](#c1-compilation)
-- [D. Précisions techniques](#d-précisions-techniques)
-	- [D.1. JSP](#d1-jsp)
-- [E. Modalités de rendu et deadline](#e-modalités-de-rendu-et-deadline)
+- [C. Comment éxécuter le projet](#c-comment-executer-le-projet)
 
 ## A. Objectif
 [**Implémentation du projet RC1 (Data Explorable) en jsp dans le cadre de l'UE LIFPROJET.**](http://cazabetremy.fr/wiki/doku.php?id=projet:sujets "**ici**")
@@ -25,7 +21,16 @@ Fichier
     ├─ data (annalyse des données avec jupyter)
     ├─ datascrapping (les différentes étapes de datascrapping)
     ├─ dataset (les données utilisés pour la carte)
-    ├─ site/frontend (les différentes étapes)
+    ├─ site/frontend
+        /About      (un dossier par page web)
+        /Accueil
+        /Energymix
+        /Linky
+        /Map
+        /Stats
+        /public (les éléments statiques du projet, style, script, img, csv et les icones)
+        app.js  ( définit les routes)
+        server.js (définit la configuration du server)
     └─ README.md
 ```
 
