@@ -1,4 +1,3 @@
-
 <img src="./data/header.jpg">
 
 **DELAHAYE** Tom *(p2110727)* et **CISSE** Ahmed *(p1811047)* **DIABY** BACHEKOU *(p2108161)* **MARTINEZ** CHRISTOPHE *(p1709105)* 
@@ -36,9 +35,12 @@ Fichier
 
 > _**NB :** Le coeur du projet se projet se trouve des les dossiers **`site`** puis **`frontend`**._
 
-## C. Comment éxécuter le projet
+## C. Comment éxécuter le projet 
 
 *cloner le projet depuis GIT*
+
+Installer node et npm (Linux)
++ `sudo apt install nodejs` puis `sudo apt install npm`
 
 Dans le projet il faut ensuite se placer au bon endroit:
 + `cd site` puis ` cd frontend` (ou directement `cd site/frontend`)
